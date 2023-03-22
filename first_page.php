@@ -1,52 +1,69 @@
+<!-- This program is used to display the information for the users to fill in and verify 
+    whether the data is correct. 
+    Author: BC000314, CHAN CHENG LAM
+            BC000076, FONG IEK KIN
+            BC005351, ZHENG BOWEN
+     Date: 22,March, 2023     
+                                      -->
+
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>User Information</title>
 </head>
-
+<!--Set the background color and insert an image -->
 <body bgcolor="#E5FAFA">
   <div align="center">
     <img src="welcome_balloon.png" width="190" height="120">
   </div>
 
+<!--When clicks on the submit button, executes the function-->
   <form name="reg" onsubmit="return formValidation();">
 
+  <!--Use "fieldset" for designing the layout-->
     <fieldset style="width: 800px;margin: 0px auto; border:2px dashed #236D7E;">
       <legend style="color:#E05273">User Information</legend>
 
       <div style="color:#1C2085">
-
+  
+         <!--Create the UserName textbox-->
         UserName:
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="user" name="user" size="20" placeholder="Letters and Numbers Only"><br><br>
 
+        <!--Create the Password textbox-->
         Password:
         &ensp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="password" id="pass" name="pass" size="23" placeholder="6-15 characters"><p style="line-height: 0.4; font-size:x-small;font-weight:300;">(at least 1 number, 1 Uppercase letter and 1 lowercase letter)</p>
 
+         <!--Create the Password confirmation textbox-->
         Password confirmation:&thinsp;&thinsp;&thinsp;
         <input type="password" id="passcon" name="passcon" size="23">
       </div>
     </fieldset>
     <br>
 
+    <!--Use "fieldset" for designing the layout-->
     <fieldset style="width: 800px;margin: 0px auto; border:2px dashed #236D7E;">
       <legend style="color:#E05273">Personal Information</legend>
       <div style="color:#1C2085">
 
+      
+        <!--Create the Name textbox-->
         Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="name" name="name" size="18" placeholder="Letters Only">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+        <!--Create the Birthday datebox-->
         Birthday:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input id="birthday" name="birthday" type="date"  max="1111-13-13">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
+        <!--Create the gender radio button-->
         Gender:&nbsp;&nbsp;
         <input type="radio" name="gender" value="Male"><span>Male</span>
         <input type="radio" name="gender" value="Female"><span>Female</span><br><br>
 
+        <!--Create the country selection box-->
         Country: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select id="country" name="country">
           <option selected value="Default">(Please select a country with below options)</option>
@@ -57,12 +74,15 @@
           <option value="PK">Pakistan</option>
         </select><br><br>
 
+        <!--Create the Adress textbox-->
         Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="address" name="address" size="53"><br><br>
 
+        <!--Create the Email textbox-->
         Email:&thinsp;&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="text" id="email" name="email" size="53"><br><br>
 
+         <!--Create multiple selection box for favourite color -->
         Favorite color:
         <select id="color" name="color">
           <option selected value="Default">(Please select your favorite color with below options)</option>
@@ -86,6 +106,7 @@
         Favorite subject:
         <br>
 
+          <!--Create multiple selection box for hobbies-->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <select id="hobby" name="hobby[]" size="4" multiple>
           <option value="Animation" name="Animation">Animation</option>
@@ -100,6 +121,7 @@
           <option value="Sing" name="Sing">Singing</option>
         </select>
 
+        <!--Create multiple selection box for food style-->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -113,6 +135,7 @@
           <option value="Vegetarian" name="Vegetarian">Vegetarian</option>
         </select>
 
+        <!--Create multiple selection box for subjects-->
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -135,24 +158,24 @@
       <I>
         <center> *All fields must be entered before submitting the form
       </I></center><br>
-      <!--create submit button-->
     </div>
 
+    <!--create submit button-->
     <center><input type="submit" name="submit" value="Submit"></center>
     <br>
   </form>
 
   <script>
     function formValidation() {
-      var user = document.reg.user;
-      var psd = document.reg.pass;
-      var name = document.reg.name;
-      var birthday = document.reg.birthday;
-      var gender = document.reg.gender;
-      var country = document.reg.country;
-      var address = document.reg.address;
-      var email = document.reg.email;
-      var color = document.reg.color;
+      var user = document.reg.user;   //create a variable to store the user's username 
+      var psd = document.reg.pass;   //create a variable to store the user's password
+      var name = document.reg.name;  //create a variable to store the user's name 
+      var birthday = document.reg.birthday;  //create a variable to store the user's birthday
+      var gender = document.reg.gender;   //create a variable to store the user's gender
+      var country = document.reg.country;  //create a variable to store the user's country
+      var address = document.reg.address;  //create a variable to store the user's address
+      var email = document.reg.email;  //create a variable to store the user's email
+      var color = document.reg.color;  //create a variable to store the user's favourite color
 
       if (user_Valid(user)) {
         if (pass_valid(psd)) {
@@ -167,7 +190,7 @@
                           if (hobby_valid()) {
                             if (food_valid()) {
                               if (subject_valid()) {
-                                // load menu page
+                                //if it's true, then load menu page
                                 window.location.href = "second_page.php";
                               }
                             }
@@ -182,10 +205,11 @@
           }
         }
       }
+      //otherwise, error will be returned.
       return false;
     }
 
-    function user_Valid(user) { //to validate the user name written in letters and numbers
+    function user_Valid(user) { //function used to validate the user name written in letters and numbers
       var letters = /^[A-Za-z0-9]+$/;
       if (!user.value) { //if not input, alert to input user name and focus
         alert("Please input your user name!");
@@ -200,7 +224,7 @@
       }
     }
 
-    function pass_valid(psd) { //validate password 6 to 15 characters    
+    function pass_valid(psd) { //function used to validate password 6 to 15 characters    
       //which contain at least one numeric digit, one uppercase and one lowercase letter
       var psd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/;
       if (pass.value.match(psd)) {
@@ -213,19 +237,19 @@
       }
     }
 
-    function passcon_valid() {
-      var psdcon = document.getElementById("passcon").value;
-      var pass = document.getElementById("pass").value;
-      if (psdcon == pass) {
+    function passcon_valid() {//function used to ensure that user enter password is the same as first time
+      var psdcon = document.getElementById("passcon").value; //get the first time password value
+      var pass = document.getElementById("pass").value; //get the second time password value
+      if (psdcon == pass) { //if they are equal, return true
         return true;
-      } else {
+      } else { // otherwise will display alert window and focus
         alert("The password and confirming password disagree! Please input the same passwords!")
         passcon.focus();
         return false;
       }
     }
 
-    function name_valid(name) { //to validate the name written in letters
+    function name_valid(name) { //function used to validate the name written in letters
       var letters = /^[A-Za-z]+$/;
       if (!name.value) { //if not input, alert to input name and focus
         alert("Please input your name!");
@@ -240,9 +264,9 @@
       }
     }
 
-    function birthday_valid(birthday) { // valid the birthday date
+    function birthday_valid(birthday) { //function used to vetify the birthday date
       var dateformat = /^\d{4}[\/\-](0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])$/;
-      if (birthday.value.match(dateformat)) {
+      if (birthday.value.match(dateformat)) { //only can input numbers for date 
         return true;
       } else { // if not, alert and focus
         alert("Invalid date format!");
@@ -251,95 +275,101 @@
       }
     }
 
-    function gender_valid(gender) {
+    function gender_valid(gender) { //function used to verify the gender 
+      //if the user doesn't choose any options, alert and return false
       if ((!gender[0].checked) && (!gender[1].checked)) {
         alert("Please select a gender !");
         return false;
       } else
-        return true;
+        return true;//otherwise, return true
     }
 
-    function country_valid(country) { // validate contry selection
-      if (country.value == "Default") { //if not select, alert and focus
+    function country_valid(country) { // function used to verify contry selection
+      if (country.value == "Default") { //if not select, alert, focus and return false
         alert('Please select your Country from the list');
         country.focus();
         return false;
       } else {
-        return true;
+        return true;//otherwise, return true
       }
     }
 
-    function address_valid(address) {
+    function address_valid(address) {// function used to verify address
       if (!address.value) { // if empty, alert and focus
         alert("Please input your Address!");
         address.focus();
         return false;
       } else {
-        return true;
+        return true;//otherwise, return true
       }
     }
 
-    function email_valid(email) { // validate email
+    function email_valid(email) { // function used to verify email
       var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (email.value.match(mailformat)) {
+      if (email.value.match(mailformat)) {//if the user input meet the format, return true
         return true;
-      } else { //if not match, alert and focus
+      } else { //if not match, alert, focus and return false
         alert("You have entered an invalid email address!");
         email.focus();
         return false;
       }
     }
 
-    function color_valid(color) { // validate color selection
-      if (color.value == "Default") { //if not select, alert and focus
+    function color_valid(color) { //function used to verify color selection
+      if (color.value == "Default") { //if not select, alert focus and return false
         alert('Select your favourate color from the list');
         color.focus();
         return false;
       } else {
-        return true;
+        return true;//otherwise, return true
       }
     }
 
-    function hobby_valid() { // validate hobby selection
+    function hobby_valid() { //function used to verify the hobby selection
+      //if not select any options, alert and return false
       if (document.forms["reg"]["hobby[]"].selectedIndex == -1) {
         alert("Please select your hobbies.");
         return false;
       } else {
-        return true;
+        return true;//otherwise, return true
       }
     }
 
-    function food_valid() { // validate foodstyle selection
+    function food_valid() { //function used to verify foodstyle selection
       if (document.forms["reg"]["foodstyle[]"].selectedIndex == -1) {
+        //if not select any options, alert and return false
         alert("Please select foodstyles you like.");
         return false;
       } else {
-        return true;
+        return true;//otherwise, return true
       }
     }
 
-    function subject_valid() { // validate drinkstyle selection
+    function subject_valid() { //function used to verify drinkstyle selection
       if (document.forms["reg"]["subject[]"].selectedIndex == -1) {
+        //if not select any options, alert and return false
         alert("Please select subjects you like.");
         return false;
       } else {
         alert("Form upload successfully!")
-        return true;
+        return true; //otherwise, return true
       }
     }
 
-    // date after today not allowed
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-    if (dd < 10) {
+    var today = new Date(); //create a variable to store the Date object
+    var dd = today.getDate(); //create a variable to store the day
+    var mm = today.getMonth() + 1; //create a variable to store the month
+    var yyyy = today.getFullYear(); //create a variable to store the year
+    if (dd < 10) { 
       dd = '0' + dd
     }
     if (mm < 10) {
       mm = '0' + mm
     }
+    //set the date format
     today = yyyy + '-' + mm + '-' + dd;
+
+    // here shows that date after today not allowed
     document.getElementById("birthday").setAttribute("max", today);
   </script>
 </body>
